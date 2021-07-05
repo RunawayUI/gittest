@@ -1,21 +1,22 @@
 "use strict";
 
-const obj = {
-    name: "Anton",
-    age: 19,
-    isMarried: true
+const numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
 };
 
-console.log(obj.name);
+const lastWatched1 = prompt("Один из последних просмотренных фильмов?", ""),
+      lastRated1 = prompt("На сколько оцените его?", "");
 
-let arr = ['first.jpg', 'second.png', 5, {}, []];
-console.log(arr[0]);
+const lastWatched2 = prompt("Один из последних просмотренных фильмов?", ""),
+      lastRated2 = prompt("На сколько оцените его?", "");
 
-const category = 'toys';
+personalMovieDB.movies[lastWatched1] = lastRated1;
+personalMovieDB.movies[lastWatched2] = lastRated2;
 
-//Интерполяция `` + ${...}
-console.log(`https://someurl.com/${category}/5`);
-
-const user = "Anton";
-
-alert(`Привет, ${user}`);
+console.log(personalMovieDB);
